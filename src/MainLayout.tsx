@@ -1,8 +1,9 @@
 import "./MainLayout.css";
 
-import { Menu, Breadcrumb, Image } from "antd";
+import { Image } from "antd";
 import Layout, { Header, Content, Footer } from "antd/lib/layout/layout";
 import React from "react";
+import ArticleList from "./components/ArticleList";
 
 export default function MainLayout() {
   return (
@@ -16,8 +17,8 @@ export default function MainLayout() {
           />
         </div>
       </Header>
-      <Content style={{ padding: "0 50px" }}>
-        <div className="site-layout-content">Show Posts here</div>
+      <Content style={{ margin: "0 auto", maxWidth: 800 }}>
+        <ArticleList />
       </Content>
       <Footer style={{ textAlign: "center" }}>Manish Kumar ©2021</Footer>
     </Layout>
