@@ -1,0 +1,15 @@
+.site-layout-content {
+  min-height: 280px;
+  padding: 24px;
+  background: #fff;
+}
+.logo {
+  float: left;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  line-height: 32px;
+}
+.ant-row-rtl .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
