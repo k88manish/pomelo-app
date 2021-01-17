@@ -12,6 +12,9 @@ export default function ArticleList({ articles }: { articles: any[] }) {
       renderItem={(item) => (
         <List.Item
           key={item.id}
+          onClick={() => {
+            console.log("view detail page", item.url);
+          }}
           extra={
             <img
               width={150}

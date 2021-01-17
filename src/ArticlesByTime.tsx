@@ -31,6 +31,7 @@ export default function ArticlesByTime() {
         (item: { type: string; subtype: string }) =>
           item.type === "image" && item.subtype === "photo"
       )?.["media-metadata"][0].url,
+      url: article.url,
     }));
   }, [articles]);
 
