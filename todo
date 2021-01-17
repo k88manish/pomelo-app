@@ -1,6 +1,8 @@
 Bootstrap with UI framework @done
 Integrate with NYT API @done
 Implement Home page @done
+Implement Articles by Category @done
+Implement Articles by Time @done
 - Implement Detail page
 - Implement Search 
 - Add unit test cases
