@@ -59,7 +59,7 @@ export default function ArticlesByTime() {
     return articles?.map((article) => ({
       id: article.short_url,
       title: article.title,
-      thumbnail: article.multimedia.find(
+      thumbnail: article.multimedia?.find(
         (media: any) => media.type === "image" && media.format === "thumbLarge"
       )?.url,
       description: article.abstract,
@@ -67,9 +67,9 @@ export default function ArticlesByTime() {
     }));
   }, [articles]);
 
-  const handleTimeRangeChange = () => {
-    // setCategory(Number(e.target.value));
-  };
+  if (articles === undefined) {
+    return <div>Loading...</div>;
+  }
 
   const menu = (
     <Menu

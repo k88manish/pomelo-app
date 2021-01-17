@@ -12,3 +12,11 @@
   float: right;
   margin: 16px 0 16px 24px;
 }
+
+.space-align-container .ant-input-group-wrapper {
+  display: block;
+}
+
+.article-search-input {
+  margin-left: 80px;
+}

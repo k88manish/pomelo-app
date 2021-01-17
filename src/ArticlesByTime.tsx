@@ -24,12 +24,12 @@ export default function ArticlesByTime() {
       return undefined;
     }
     return articles?.map((article) => ({
-      id: article.id,
+      id: article.id || article.title,
       title: article.title,
       description: article.abstract,
       thumbnail: article.media.find(
-        (item: { type: string; subType: string }) =>
-          item.type === "image" && item.subType === "photo"
+        (item: { type: string; subtype: string }) =>
+          item.type === "image" && item.subtype === "photo"
       )?.["media-metadata"][0].url,
     }));
   }, [articles]);
@@ -38,6 +38,10 @@ export default function ArticlesByTime() {
     setTimePeriod(Number(e.target.value));
   };
 
+  if (articles === undefined) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <PageHeader
@@ -45,9 +49,15 @@ export default function ArticlesByTime() {
         ghost={false}
         extra={[
           <Radio.Group value={timePeriod} onChange={handleTimeRangeChange}>
-            <Radio.Button value={1}>1 day</Radio.Button>
-            <Radio.Button value={7}>7 days</Radio.Button>
-            <Radio.Button value={30}>30 days</Radio.Button>
+            <Radio.Button key="1" value={1}>
+              1 day
+            </Radio.Button>
+            <Radio.Button key="7" value={7}>
+              7 days
+            </Radio.Button>
+            <Radio.Button key="30" value={30}>
+              30 days
+            </Radio.Button>
           </Radio.Group>,
         ]}
       ></PageHeader>
