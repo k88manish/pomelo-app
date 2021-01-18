@@ -1,5 +1,3 @@
-import "./MainLayout.css";
-
 import { Menu } from "antd";
 import Layout, { Content, Footer } from "antd/lib/layout/layout";
 import React, { useState } from "react";

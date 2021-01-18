@@ -1,3 +1,5 @@
+import "./TopHeader.css";
+
 import { Space, Input, Image } from "antd";
 import { Header } from "antd/lib/layout/layout";
 import React from "react";
@@ -19,7 +21,7 @@ export default function TopHeader(props: {
       </div>
       <div className="space-align-container">
         <div className="space-align-block">
-          <Space align="center">
+          <Space align="center" className="space-container">
             .
             <Input.Search
               placeholder="Search articles"

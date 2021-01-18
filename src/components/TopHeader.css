@@ -1,0 +1,44 @@
+.logo {
+  float: left;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  line-height: 32px;
+}
+
+.article-search-input {
+  flex: 1;
+}
+
+.site-layout-content {
+  min-height: 280px;
+  background: #fff;
+}
+
+.space-align-container .ant-input-group-wrapper {
+  display: block;
+}
+
+.space-align-block {
+  display: flex;
+}
+
+.space-container {
+  flex: 1;
+}
+
+.space-container .ant-space-item:last-child {
+  flex: 1;
+  max-width: 600px;
+}
+
+@media only screen and (max-width: 480px) {
+  .logo {
+    display: none;
+  }
+
+  .article-search-input {
+    margin-left: 0px;
+    width: 100%;
+    flex: 1;
+  }
+}
