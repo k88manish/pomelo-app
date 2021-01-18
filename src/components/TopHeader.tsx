@@ -22,7 +22,7 @@ export default function TopHeader(props: {
           <Space align="center">
             .
             <Input.Search
-              placeholder="Search articles..."
+              placeholder="Search articles"
               className="article-search-input"
               onSearch={(value) => {
                 props.setSearchText(value);
