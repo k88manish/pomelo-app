@@ -1,8 +1,12 @@
 import { List } from "antd";
-import React from "react";
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { SelectedArticleContext } from "../contexts/SelectedArticleContext";
 import FallBack_THUMBNAIL from "../nytimes-logo.png";
 
 export default function ArticleList({ articles }: { articles: any[] }) {
+  const { setSelectedArticle } = useContext(SelectedArticleContext);
+  const history = useHistory();
   return (
     <List
       itemLayout="vertical"
@@ -13,7 +17,8 @@ export default function ArticleList({ articles }: { articles: any[] }) {
         <List.Item
           key={item.id}
           onClick={() => {
-            console.log("view detail page", item.url);
+            setSelectedArticle(item);
+            history.push("/detail");
           }}
           extra={
             <img

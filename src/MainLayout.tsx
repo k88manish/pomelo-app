@@ -17,10 +17,14 @@ import ArticlesByCategory from "./ArticlesByCategory";
 import ArticlesBySearch from "./ArticlesBySearch";
 import ArticleDetail from "./ArticleDetail";
 import TopHeader from "./components/TopHeader";
+import { SelectedArticleContext } from "./contexts/SelectedArticleContext";
 
 export default function MainLayout() {
   const [searchText, setSearchText] = useState<string>("");
   const [selectedMenu, setSelectedMenu] = useState<string | undefined>("1");
+  const [selectedArticle, setSelectedArticle] = useState<any | undefined>(
+    undefined
+  );
   return (
     <Router>
       <Layout className="layout">
@@ -59,21 +63,25 @@ export default function MainLayout() {
             </Menu>
           </Sider>
           <Content>
-            <Switch>
-              <Redirect exact from="/" to="period" />
-              <Route path="/period">
-                <ArticlesByTime />
-              </Route>
-              <Route path="/category">
-                <ArticlesByCategory />
-              </Route>
-              <Route path="/search">
-                <ArticlesBySearch searchText={searchText} />
-              </Route>
-              <Route path="/detail">
-                <ArticleDetail />
-              </Route>
-            </Switch>
+            <SelectedArticleContext.Provider
+              value={{ selectedArticle, setSelectedArticle }}
+            >
+              <Switch>
+                <Redirect exact from="/" to="period" />
+                <Route path="/period">
+                  <ArticlesByTime />
+                </Route>
+                <Route path="/category">
+                  <ArticlesByCategory />
+                </Route>
+                <Route path="/search">
+                  <ArticlesBySearch searchText={searchText} />
+                </Route>
+                <Route path="/detail">
+                  <ArticleDetail />
+                </Route>
+              </Switch>
+            </SelectedArticleContext.Provider>
           </Content>
         </Layout>
         <Footer style={{ textAlign: "center" }}>Manish Kumar ©2021</Footer>

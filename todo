@@ -3,7 +3,7 @@ Integrate with NYT API @done
 Implement Home page @done
 Implement Articles by Category @done
 Implement Articles by Time @done
-- Implement Detail page
+Implement Detail page @done
 Implement Search @done
 - Add unit test cases
 - Update README 
